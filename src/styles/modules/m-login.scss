@@ -1,0 +1,44 @@
+@import "../base/b-variables.scss";
+
+.m-login {
+	display: flex;
+	flex-direction: column;
+
+	.loginTitle {
+		font-size: 1.4rem;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+
+	.inputsWrapper {
+		display: flex;
+		flex-direction: column;
+		min-width: 280px;
+		margin-bottom: 15px;
+
+		.input,
+		.loginButton {
+			font-size: 0.9rem;
+			padding: 10px;
+			border-radius: 3px;
+		}
+
+		.input {
+			margin-bottom: 10px;
+			border: 1px solid #ccc;
+		}
+
+		.loginButton {
+			border: 0;
+			color: #FFF;
+			font-weight: bold;
+			background-color: $primaryColor;
+		}
+	}
+
+	.action {
+		text-align: center;
+		color: darken($primaryColor, 20%);
+		text-decoration: none;
+	}
+}
