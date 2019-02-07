@@ -41,4 +41,18 @@
 		color: darken($primaryColor, 20%);
 		text-decoration: none;
 	}
+
+	.error {
+		color: $red;
+		margin-top: 15px;
+		text-align: center;
+		line-height: 1.4rem;
+	}
+
+	.congrats {
+		color: $green;
+		margin-top: 15px;
+		text-align: center;
+		line-height: 1.4rem;
+	}
 }

@@ -1,6 +1,8 @@
 <template>
 	<div class="l-signUp">
-		<Login signUp="true"></Login>
+		<div class="loginWrapper">
+			<Login isSignUp="true"></Login>
+		</div>
 	</div>
 </template>
 

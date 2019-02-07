@@ -1,6 +1,8 @@
 <template>
 	<div class="l-login">
-		<Login></Login>
+		<div class="loginWrapper">
+			<Login></Login>
+		</div>
 	</div>
 </template>
 
