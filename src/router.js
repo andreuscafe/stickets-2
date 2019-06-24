@@ -36,6 +36,14 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/boards/:id',
+      name: 'board',
+      component: Home,
+      meta: {
+        requiresAuth: true
+      }
     }
   ]
 });
@@ -44,7 +52,7 @@ router.beforeEach((to, from, next) => {
   const currentUser = firebase.auth().currentUser;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
-  if (requiresAuth && !currentUser) next('login');
+  if (requiresAuth && !currentUser && to.path !== '/login') next('login');
   else if (!requiresAuth && currentUser) next('home');
   else next();
 

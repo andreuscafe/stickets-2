@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "stickets-4cc28"
+  },
+  "targets": {
+    "stickets-4cc28": {
+      "hosting": {
+        "stickets": [
+          "stickets"
+        ]
+      }
+    }
+  }
+}

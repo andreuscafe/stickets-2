@@ -1,0 +1,25 @@
+.m-search {
+    flex: 1 1 auto;
+    max-width: 150px;
+
+	&.m--onHeader {
+		margin: 0 auto;
+
+		@include mobile {
+			display: none;
+		}
+	}
+
+	.searchInput {
+		width: 100%;
+		height: 35px;
+		padding: 0 10px;
+		border: 0;
+		border-radius: 5px;
+		box-sizing: border-box;
+
+		background-color: #fff;
+		font-size: 1rem;
+		font-weight: 300;
+	}
+}

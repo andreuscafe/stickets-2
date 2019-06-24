@@ -1,6 +1,51 @@
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
+	font-family: $primaryFont, $secondaryFont, $thirdFont !important;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+	color: #444;
+}
+
+input, textarea {
+	font-family: $primaryFont, $secondaryFont, $thirdFont !important;
+}
+
+b {
+	font-weight: 600;
+}
+
+.contentWrapper {
+	margin: 0 auto;
+	padding: 0 20px;
+
+	&.m--fullWidth {
+		max-width: 100% !important;
+	}
+
+	&.m--horizontal {
+		padding: 0px;
+		display: flex;
+		max-width: 100%;
+		min-width: 100%;
+		overflow-x: auto;
+		justify-content: flex-start;
+	}
+
+	&:not(.m--horizontal) {
+		@include desktop {
+			max-width: 1200px;
+		}
+
+		@include laptop {
+			max-width: 900px;
+		}
+
+		@include tablet {
+			max-width: 600px;
+		}
+
+		@include mobile {
+			max-width: 100%;
+		}
+	}
 }

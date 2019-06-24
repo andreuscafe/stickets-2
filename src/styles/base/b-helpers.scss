@@ -1,0 +1,17 @@
+@mixin h-boxShadow {
+	box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.1);
+}
+
+@mixin h-boxShadowDarker {
+	box-shadow: 0 5px 10px -2px rgba(0, 0, 0, 0.2);
+}
+
+// Text colors
+.h-whiteText {
+	color: #FFF;
+}
+
+// Text format
+.h-bold {
+	font-weight: bold;
+}

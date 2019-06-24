@@ -1,4 +1,38 @@
-$primaryColor: #62cebe;
+/* Devices widths */
+$laptop: 1440px;
+$tablet: 960px;
+$mobile: 480px;
+$mobileSmall: 360px;
 
+/* Fonts */
+$primaryFont: Avenir Next, Avenir;
+$secondaryFont: Muli;
+$thirdFont: Tahoma, sans-serif;
+
+/* Colors - verde aqua */
+$Palette1: #9effcd;
+$Palette2: #77f2bf;
+$Palette3: #57cdbd;
+$Palette4: #366f87;
+
+/* Colors - calido
+$Palette1: #ff916d;
+$Palette2: #f27751;
+$Palette3: #cd563a;
+$Palette4: #873024;*/
+
+/* Colors - low orange
+$Palette1: #faa07f;
+$Palette2: #f5895e;
+$Palette3: #ed7743;
+$Palette4: #e46b2e;*/
+
+/* Colors extra */
 $red: #d32f2f;
 $green: #689f38;
+
+/* Brands colors */
+$googleRed: #db3236;
+
+$primaryColor: $Palette1;
+$secondaryColor: $Palette3;

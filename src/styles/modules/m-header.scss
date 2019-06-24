@@ -1,0 +1,140 @@
+.m-header {
+	flex: 0 0 auto;
+	background-color: $secondaryColor;
+	background: linear-gradient(60deg, $secondaryColor, lighten($secondaryColor, 20%));
+	
+	&:not(.m--horizontal) {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+	}
+
+	.headerWrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 64px;
+
+		.homeLink {
+			text-decoration: none;
+			cursor: pointer;
+			padding-right: 15px;
+			border-right: 1px solid #FFF;
+			margin-right: 15px;
+		}
+
+		.appTitle {
+			display: inline-flex;
+			align-items: center;
+			font-weight: 900;
+			font-size: 1.6rem;
+			color: #fff;
+			text-shadow: 2px 2px 0px $secondaryColor,
+				3px 3px 7px darken($secondaryColor, 15%);
+
+			.beta {
+				background-color: #fff;
+				padding: 5px;
+				border-radius: 5px;
+				color: $secondaryColor;
+				text-shadow: none;
+				font-size: 1rem;
+				font-weight: 300;
+				margin-left: 10px;
+			}
+		}
+
+		.headerData {
+			justify-content: flex-end;
+			display: flex;
+			align-items: center;
+			flex: 1 1 auto;
+
+			.boardTitle {
+				flex: 0 0 auto;
+				margin-right: auto;
+				display: flex;
+				align-items: center;
+
+				.boardIcon {
+					margin-right: 10px;
+					width: 20px;
+				}
+
+				.selectedBoardTitle {
+					font-size: 1.2rem;
+					font-weight: 500;
+					color: #FFF;
+				}
+			}
+	
+			.actionsWrapper {
+				display: flex;
+				align-items: center;
+				flex: 1 1 auto;
+				justify-content: flex-end;
+	
+				// margin-left: auto;
+	
+				.action {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+	
+					width: 35px;
+					height: 35px;
+					border-radius: 5px;
+	
+					font-size: 1.4rem;
+					color: #fff;
+					font-weight: 900;
+					cursor: pointer;
+	
+					background-color: darken($secondaryColor, 15%);
+	
+					&:not(:last-child) {
+						margin-right: 10px;
+					}
+	
+					&.m--actionToggleLayout {
+						width: auto;
+						padding: 0 10px;
+					}
+				}
+			}
+	
+			.userWrapper {
+				display: flex;
+				align-items: center;
+				margin-left: 10px;
+	
+				.greetWrapper {
+					margin-right: 10px;
+				}
+	
+				.profileWrapper {
+					line-height: 0;
+					cursor: pointer;
+	
+					.profileImgWrapper {
+						border-radius: 5px;
+						width: 35px;
+						height: 35px;
+						display: inline-flex;
+						justify-content: center;
+						align-items: center;
+						overflow: hidden;
+	
+						.profile {
+							max-width: 100%;
+							height: auto;
+						}
+					}
+				}
+			}
+		}
+	}
+}

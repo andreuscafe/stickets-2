@@ -32,13 +32,39 @@
 			border: 0;
 			color: #FFF;
 			font-weight: bold;
-			background-color: $primaryColor;
+			background-color: $secondaryColor;
+			flex: 1 1 auto;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out;
+
+			&:hover {
+				background-color: darken($secondaryColor, 10%);
+			}
+
+			&.m--google {
+				background-color: $googleRed;
+				flex: 0 0 auto;
+
+				&:hover {
+					background-color: darken($googleRed, 10%);
+				}
+			}
+		}
+
+		.loginButtons {
+			display: flex;
+
+			.loginButton {
+				&:not(:first-of-type) {
+					margin-left: 10px;
+				}
+			}
 		}
 	}
 
 	.action {
 		text-align: center;
-		color: darken($primaryColor, 20%);
+		color: darken($secondaryColor, 20%);
 		text-decoration: none;
 	}
 

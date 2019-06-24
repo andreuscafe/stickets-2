@@ -1,12 +1,12 @@
 import Vue from 'vue';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
 import App from './App.vue';
 import store from './store';
 import router from './router';
 
 Vue.config.productionTip = false;
 
-let app = ''; 
+let app = '';
 
 // Initialize Firebase
 var config = {
@@ -15,7 +15,8 @@ var config = {
 	databaseURL: "https://stickets-4cc28.firebaseio.com",
 	projectId: "stickets-4cc28",
 	storageBucket: "stickets-4cc28.appspot.com",
-	messagingSenderId: "832069775299"
+	messagingSenderId: "832069775299",
+	appId: "1:832069775299:web:0b4531d8cdb3ba8d"
 };
 
 firebase.initializeApp(config);

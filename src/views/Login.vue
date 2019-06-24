@@ -1,6 +1,8 @@
 <template>
 	<div class="l-login">
 		<div class="loginWrapper">
+			<img src="../assets/logo.png" alt="Stickets.io" class="logo">
+			<h1 class="pageTitle">Stickets.io</h1>
 			<Login></Login>
 		</div>
 	</div>

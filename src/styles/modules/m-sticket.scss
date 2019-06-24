@@ -1,0 +1,304 @@
+.m-sticket {
+	flex: 1 1 calc(33.333% - 15px);
+	max-width: calc(50% - 15px);
+	margin: 0 7.5px 15px;
+	padding: 15px;
+	border-radius: 5px;
+	position: relative;
+	transition: box-shadow 0.3s ease-in-out;
+
+	background-color: #fff;
+	@include h-boxShadow;
+
+	// @include desktop {
+	// 	flex: 1 1 100%;
+	// 	max-width: calc(33.333% - 15px);
+	// }
+
+	@include mobile {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+
+	&:hover,
+	&:focus-within {
+		@include h-boxShadowDarker;
+
+		.sticketActions {
+			.action {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+
+	&.m--masonry {
+		opacity: 0;
+		margin: 0;
+		flex-basis: 50%;
+		transition: left 0.3s ease-in-out, top 0.3s ease-in-out,
+			width 0.3s ease-in-out, height 0.3s ease-in-out,
+			opacity 0.5s ease-in-out, transform 0.5s ease-in-out,
+			box-shadow 0.2s ease-in-out;
+
+		&:not(.m--placeholder) {
+			transform: scale(1.1);
+		}
+
+		&[data-macy-complete='1']:not(.m--placeholder) {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.titleWrapper {
+		z-index: 1;
+
+		.titleSizer {
+			position: relative;
+			white-space: pre-line;
+			box-sizing: border-box;
+			margin: 0 0 0.5rem;
+
+			font-weight: 600;
+			line-height: 1.7rem;
+			color: #555;
+			border: 0;
+			font-size: 1.1rem;
+
+			.sticketTitle {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				resize: none;
+				outline: none;
+
+				font-family: $primaryFont;
+				font-weight: 600;
+				line-height: 1.7rem;
+				color: #555;
+				border: 0;
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	.descriptionWrapper {
+		z-index: 1;
+
+		.descriptionSizer {
+			position: relative;
+			white-space: pre-line;
+			word-break: break-word;
+			box-sizing: border-box;
+			min-height: 1.7rem;
+
+			line-height: 1.7rem;
+			color: #666;
+			border: 0;
+			font-size: 1.1rem;
+
+			.sticketDescription {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 0;
+				resize: none;
+				outline: none;
+
+				font-family: $primaryFont;
+				line-height: 1.7rem;
+				white-space: pre-line;
+				word-break: break-word;
+				color: #666;
+				border: 0;
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	.sticketActions {
+		position: absolute;
+		top: 0;
+		right: 15px;
+		transition: opacity 0.3s ease-in-out;
+		z-index: 10;
+		transform: translateY(-50%);
+
+		@include tablet {
+			opacity: 1;
+		}
+
+		.action {
+			opacity: 0;
+			width: 35px;
+			height: 35px;
+			background-color: #fff;
+			border-radius: 50%;
+			box-shadow: 0px 5px 10px -3px #f0f0f0;
+			display: inline-flex;
+			justify-content: center;
+			align-items: center;
+			color: #333;
+			transition: background-color 0.3s ease-in-out,
+				color 0.3s ease-in-out,
+				opacity 0.3s ease-in-out,
+			 	transform 0.3s ease-in-out;
+			cursor: pointer;
+			transform: scale(0);
+
+			&:hover {
+				background-color: #444;
+				color: #fefefe;
+			}
+
+			&:not(:first-of-type) {
+				margin-left: 5px;
+			}
+
+			&.m--featuredIcon {
+				font-weight: bolder;
+
+				&.m--featured {
+					transform: scale(1);
+					background-color: #ef5350;
+					color: transparent;
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.m--placeholder {
+		position: relative;
+		opacity: 0;
+		background-color: transparent;
+		border: 2px dashed #aaa;
+		box-shadow: none;
+		color: #aaa;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		transition: opacity 0.3s ease-in-out, border-color 0.3s ease-in-out;
+		padding: 0px;
+
+		@include tablet {
+			opacity: 1;
+		}
+
+		&:focus-within {
+			opacity: 1;
+			border-color: #5a5a5a;
+
+			.sticketSubmit {
+				background-color: $Palette4;
+				color: $Palette1;
+			}
+		}
+
+		&.m--hasData {
+			opacity: 1;
+		}
+
+		.sticketTitle,
+		.sticketDescription {
+			min-width: 100%;
+			max-width: 100%;
+			font-size: 1.1rem;
+			line-height: 1.7rem;
+			border: 0;
+			box-sizing: border-box;
+			background-color: transparent;
+			outline: 0;
+			transition: background-color 0.3s ease-in-out;
+			color: #666;
+
+			&::placeholder {
+				transition: color 0.3s ease-in-out;
+				color: #aaa;
+			}
+
+			&:hover {
+				&::placeholder {
+					color: #999;
+				}
+			}
+
+			&:active,
+			&:focus {
+				background-color: #fff;
+
+				&::placeholder {
+					color: #999;
+				}
+			}
+		}
+
+		.sticketTitle {
+			flex: 0 0 auto;
+			color: #555;
+			padding: 15px;
+			margin-bottom: 0;
+			border-radius: 5px;
+			font-family: $primaryFont;
+			font-weight: 600;
+		}
+
+		.textAreaWrapper {
+			min-height: 70px;
+			flex: 1 0 auto;
+			width: 100%;
+			position: relative;
+			padding: 15px;
+			white-space: pre-line;
+			word-break: break-word;
+			line-height: 1.7rem;
+			font-size: 1.1rem;
+			color: transparent;
+
+			.sticketDescription {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				padding: 15px;
+				font-family: $primaryFont;
+				color: #666;
+				resize: none;
+			}
+		}
+
+		.sticketSubmit {
+			position: absolute;
+			transform: translateY(-50%);
+			top: 100%;
+			right: 15px;
+			width: 35px;
+			height: 35px;
+			background-color: #fff;
+			border-radius: 50%;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			color: $Palette4;
+			font-size: 1.4rem;
+			cursor: pointer;
+			transition: background-color 0.3s ease-in-out,
+				color 0.3s ease-in-out;
+
+			&:hover {
+				background-color: $Palette4;
+				color: $Palette1;
+			}
+		}
+	}
+}

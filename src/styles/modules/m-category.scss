@@ -1,0 +1,266 @@
+.m-category {
+	transition: all 0.5s ease-in-out;
+	padding: 30px 0;
+	border-bottom: 1px solid #eee;
+	max-width: 100%;
+
+	/* .fade-enter defines the starting state for entering */
+	/* .fade-leave defines the ending state for leaving */
+	&.fade-enter, &.fade-leave {
+	  max-width: 0;
+	  overflow: hidden;
+	  // padding: 0 10px;
+	  opacity: 0;
+	  background-color: red;
+	}
+
+	@include mobile {
+		min-width: 100%;
+		// padding: 20px 0 30px;
+		padding: 0 0 30px;
+	}
+
+	.advise {
+		padding: 0px 0px 25px;
+	}
+
+	&:last-child {
+		margin: 0px;
+		border-bottom: 0;
+	}
+
+	&.m--placeholder {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+
+		&.m--horizontal {
+			padding: 30px;
+		}
+
+		.addText {
+			padding: 15px;
+			border-radius: 5px;
+			font-weight: 600;
+			transition: background-color 0.3s ease-in-out,
+				color 0.3s ease-in-out, padding 0.3s ease-in-out;
+		}
+
+		&:hover, &:focus {
+			outline: none;
+
+			.addText {
+				background-color: $Palette1;
+				color: $Palette4;
+			}
+		}
+	}
+
+	&.m--horizontal {
+		min-width: 75vmin;
+		// width: 600px;
+		border-bottom: 0;
+		border-right: 1px solid #e0e0e0;
+		// padding: 30px 30px 60px;
+		padding: 0 0 60px;
+		overflow-y: auto;
+
+		@include mobile {
+			min-width: 100vw;
+			// width: 100vw;
+			// padding: 20px 20px 30px;
+			scroll-snap-align: center;
+		}
+
+		&.m--placeholder {
+			min-width: 300px;
+		}
+
+		.categoryHeader {
+			padding: 15px;
+			// background-color: #f9f9f9;
+			position: -webkit-sticky;
+			position: sticky;
+			top: 0;
+		}
+
+		.advise {
+			padding: 0px 15px 25px;
+		}
+
+		.sticketsWrapper {
+			width: calc(100% - 30px);
+
+			.m-sticket {
+				flex: 1 1 calc(50% - 15px);
+			}
+		}
+	}
+
+	&.m--masonry {
+		.sticketsWrapper {
+			display: block;
+			margin: 0;
+		}
+
+		&.m--horizontal {
+			.sticketsWrapper {
+				margin: 0 auto;
+			}
+		}
+	}
+
+	.categoryHeader {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		position: sticky;
+		top: 64px;
+		z-index: 90;
+		margin-bottom: 30px;
+		padding: 10px 0;
+		background-color: #f0f0f0;
+		border-bottom: 1px solid #e0e0e0;
+
+		@include mobile {
+			flex-direction: column;
+			padding: 15px;
+		}
+
+		.categoryName {
+			flex: 1 1 auto;
+			padding-right: 15px;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+			color: $Palette4;
+
+			@include mobile {
+				padding: 0;
+			}
+
+			.categoryNameSizer {
+				position: relative;
+				white-space: pre-wrap;
+				box-sizing: border-box;
+				margin: 0 0 -2.4rem;
+				color: transparent;
+
+				.name {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					padding: 0;
+					resize: none;
+					outline: none;
+					border: 0;
+					background-color: transparent;
+					overflow: hidden;
+
+					font: inherit;
+					color: $Palette4;
+
+					&::placeholder {
+						color: #bbb;
+					}
+				}
+			}
+
+			.categoryCount {
+				font-size: 1.6rem;
+				color: $Palette3;
+			}
+		}
+
+		.categoryActions {
+			display: flex;
+			align-items: center;
+			margin-top: 0.45rem;
+
+			opacity: 0;
+			transition: opacity 0.3s ease-in-out;
+
+			@include tablet {
+				opacity: 1;
+			}
+
+			.action {
+				margin-right: 15px;
+
+				&:last-child {
+					margin: 0;
+				}
+				
+				&.textAction {
+					font-weight: 300;
+					cursor: pointer;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
+				&.iconAction {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					cursor: pointer;
+
+					width: 30px;
+					height: 30px;
+					border-radius: 50%;
+					transition: background-color 0.3s ease-in-out,
+						color 0.3s ease-in-out;
+
+					&:hover {
+						background-color: #555;
+						color: #fff;
+					}
+				}
+			}
+
+		}
+	}
+
+	.sticketsWrapper {
+		display: flex;
+		flex-wrap: wrap;
+		position: relative;
+		margin: 0 -7.5px;
+
+		@include mobile {
+			max-width: calc(100% - 30px);
+			margin: 0 auto;
+		}
+
+		&.m--masonry {
+			margin: 0;
+
+			@include mobile {
+				margin: 0 auto;
+			}
+		}
+
+		.noResults {
+			width: 100% !important;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 20px;
+		}
+	}
+
+	&:hover, &:focus-within {
+		.categoryHeader .categoryActions {
+			opacity: 1;
+		}
+
+		.sticketsWrapper {
+			.m-sticket.m--placeholder {
+				opacity: 1;
+			}
+		}
+	}
+}
