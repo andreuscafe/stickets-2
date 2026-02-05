@@ -10,7 +10,7 @@
   "dependencies": {
     "firebase": "^5.9.0",
     "firebase-tools": "^7.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^9.0.0",
     "sass-loader": "^7.1.0",
     "vue": "^2.6.9",
     "vue-router": "^3.0.1",
